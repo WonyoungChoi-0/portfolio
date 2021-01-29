@@ -22,6 +22,9 @@ const Footer = () => {
                     <li><a href="https://www.linkedin.com/in/wonyoung-choi/" target="_blank" rel="noopener noreferrer" className="linkedin">
                         <i className="fab fa-linkedin fa-2x"></i>
                     </a></li>
+                    <li><a href="https://github.com/WonyoungChoi-0" target="_blank" rel="noopener noreferrer" className="github">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a></li>
                 </ul>
 
             </div>
