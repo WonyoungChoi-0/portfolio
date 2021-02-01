@@ -36,3 +36,20 @@ ul {
   list-style: none;
   padding: 0;
 }
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { 
+  transform: scale(1.05); 
+  cursor: pointer;
+}
+
+.modal-class {
+  width: 90%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .modal-class {
+    width: 100%;
+  }
+}
+
