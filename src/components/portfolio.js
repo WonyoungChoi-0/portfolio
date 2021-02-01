@@ -1,17 +1,72 @@
 import React from "react"
+import {useStaticQuery, graphql} from "gatsby"
+import ProjectModal from "./project_modal"
 
 const Portfolio = () => {
+
+    const data = useStaticQuery(graphql`
+        query {
+            portfolioProjects: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/projects/"}}) {
+                edges {
+                    node {
+                        html
+                        frontmatter {
+                            title
+                            subtitle
+                            link
+                            mainImage {
+                                childImageSharp {
+                                    fixed(width: 350, height: 300) {
+                                        ...GatsbyImageSharpFixed
+                                    }
+                                }
+                            }
+                            image1 {
+                                childImageSharp {
+                                    fluid(maxWidth: 450) {
+                                        ...GatsbyImageSharpFluid
+                                    }
+                                }
+                            }
+                            image2 {
+                                childImageSharp {
+                                    fluid(maxWidth: 450) {
+                                        ...GatsbyImageSharpFluid
+                                    }
+                                }
+                            }
+                            image3 {
+                                childImageSharp {
+                                    fluid(maxWidth: 450) {
+                                        ...GatsbyImageSharpFluid
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    `)
+
+    const flexContainerStyles = {
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "space-evenly",
+        marginTop: "2.5%",
+        marginBottom: "2.5%",
+    }
+
     return (
-        <div style={{textAlign: "center"}} id="portfolioSection">
+        <div style={{textAlign: "center", paddingBottom: "5%"}} id="portfolioSection">
             <h2>PORTFOLIO</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div style={flexContainerStyles}>
+                {data.portfolioProjects.edges.map(({node}) => (
+                    <ProjectModal project={node}/>
+                ))} 
+            </div>
         </div>
     )
 }

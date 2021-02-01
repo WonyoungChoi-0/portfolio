@@ -31,7 +31,7 @@ const About = () => {
         display: "flex",
         flexDirection: "row",
         flexWrap: "wrap",
-        justifyContent: "space-evenly",
+        justifyContent: "space-around",
         marginTop: "2.5%",
         marginBottom: "2.5%",
     }
@@ -42,7 +42,7 @@ const About = () => {
             
 
             <div style={flexContainerStyles}>
-                <Card style={{width: "275px", padding: "12.5px", paddingBottom: "0"}}>
+                <Card style={{width: "290px", padding: "1.25rem"}}>
                     <Img fixed={data.profileImage.childImageSharp.fixed} alt="Profile Picture" style={{borderRadius: "1%"}}/>
                     <CardBody>
                         <CardTitle tag="h5">{data.aboutInfo.frontmatter.name}</CardTitle>
@@ -50,13 +50,27 @@ const About = () => {
                     </CardBody>
                 </Card>
                 
-                <Card style={{width: "500px"}}>
+                <Card style={{width: "600px", padding: "1.25rem"}}>
                     <CardBody>
                         <CardText style={{textAlign: "left"}} dangerouslySetInnerHTML={{__html: data.aboutInfo.html}}/>
                     </CardBody>
                 </Card>
                 
             </div>
+
+            {/* <Media style={{backgroundColor: "white", borderRadius: "0.25rem", border: "1px solid rgba(0, 0, 0, 0.125)", padding: "1.25rem", width: "85%", margin: "auto"}}>
+                <Media left>
+                    <Img fixed={data.profileImage.childImageSharp.fixed} alt="Profile Picture" style={{borderRadius: "0.25rem", marginBottom: "1.05rem"}}/>
+                    <CardTitle tag="h5">{data.aboutInfo.frontmatter.name}</CardTitle>
+                    <CardSubtitle tag="h6" className="mb-2 text-muted">{data.aboutInfo.frontmatter.occupation}</CardSubtitle>
+                </Media>
+                <Media body style={{textAlign: "left", marginLeft: "1.15rem"}}>
+                    <Media heading>
+                    Media heading
+                    </Media>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </Media>
+            </Media> */}
 
             
         </div>

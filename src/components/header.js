@@ -32,7 +32,7 @@ const Header = ({headerImage}) => {
                 <Link to="aboutSection" className="nav-link" style={{fontSize: "18px", cursor: "pointer"}} offset={-50} spy={true} smooth={true} duration={1000}>ABOUT</Link>
               </NavItem>
               <NavItem style={{marginRight: "5%"}}>
-                <Link to="portfolioSection" className="nav-link" style={{fontSize: "18px", cursor: "pointer"}} offset={-50} spy={true} smooth={true} duration={1000}>PORTFOLIO</Link>
+                <Link to="portfolioSection" className="nav-link" style={{fontSize: "18px", cursor: "pointer"}} offset={-100} spy={true} smooth={true} duration={1000}>PORTFOLIO</Link>
               </NavItem>
               <NavItem style={{marginRight: "5%"}}>
                 <Link to="blogSection" className="nav-link" style={{fontSize: "18px", cursor: "pointer"}} offset={-50} spy={true} smooth={true} duration={1000}>BLOG</Link>
