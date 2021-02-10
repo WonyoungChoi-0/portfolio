@@ -60,7 +60,7 @@ const Portfolio = () => {
     }
 
     return (
-        <div style={{textAlign: "center", paddingBottom: "5%"}} id="portfolioSection">
+        <div style={{textAlign: "center", paddingTop: "10%"}} id="portfolioSection">
             <h2>PORTFOLIO</h2>
             <div style={flexContainerStyles}>
                 {data.portfolioProjects.edges.map(({node}) => (

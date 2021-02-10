@@ -18,13 +18,22 @@ h1 {
   margin-bottom: 20px;
   text-align: center;
 }
-.navbar {
+.header-free {
   background-color: white;
   // border-right: 1px solid rgba(0, 0, 0, 0.4);
   // border-left: 1px solid rgba(0, 0, 0, 0.4);
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   line-height: 1;
+  transition: all ease-in 300ms;
 }
+
+.header-at-top {
+  background-color: transparent;
+  border-bottom: 0px;
+  line-height: 1;
+  transition: all ease-in 300ms;
+}
+
 .navbar-light .navbar-nav .nav-link,
 .navbar-light .navbar-brand {
   color: #0056b3;
@@ -32,6 +41,14 @@ h1 {
     color: #007bff;
   }
 }
+
+.nav-link-top {
+  color: red;
+  &:hover {
+    color: pink;
+  }
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -51,5 +68,14 @@ ul {
   .modal-class {
     width: 100%;
   }
+  .navbar {
+    background-color: white;
+    // border-right: 1px solid rgba(0, 0, 0, 0.4);
+    // border-left: 1px solid rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    line-height: 1;
+    transition: all ease-in 300ms;
+  }
 }
+
 

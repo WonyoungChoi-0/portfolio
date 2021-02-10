@@ -13,7 +13,7 @@ if (typeof window !== "undefined") {
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
-      headerImage: file(relativePath: { eq: "header_background.jpg" }) {
+      headerImage: file(relativePath: { eq: "header_image.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid
