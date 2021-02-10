@@ -3,7 +3,7 @@ import React from "react"
 
 const Footer = () => {
     return (
-        <div className="text-footer"  id="footerSection">
+        <div className="text-footer"  id="footerSection" style={{paddingTop: "10%"}}>
             <h4 className="text-center">
                 CONTACT
             </h4>
