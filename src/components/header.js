@@ -34,6 +34,7 @@ const Header = ({headerImage}) => {
       window.removeEventListener('scroll', listenScrollEvent);
   }, []);
 
+
   return (
     <header id="homeSection">
       <Navbar fixed="top" light expand="sm" className={header}>
@@ -60,8 +61,22 @@ const Header = ({headerImage}) => {
             </Collapse>
           </div>
         </Navbar>
-        <BackgroundImage fluid={headerImage.childImageSharp.fluid} style={{width: "98.9vw", height: "100vh"}}>
+        <BackgroundImage fluid={headerImage.childImageSharp.fluid} style={{width: "98.9vw", height: "100vh", textAlign: "center"}}>
+          <div className="black-overlay">
+            <div style={{margin: "5% auto 0", width: "30%", color: "white"}}>
+              <h1>Hello, I'm Wonyoung. <br/> I'm a software engineer.</h1>
+              <Link to="aboutSection" className="nav-link" style={{fontSize: "18px", cursor: "pointer"}} offset={30} spy={true} smooth={true} duration={1000}>
+                <div className="grow" style={{width: "100%", color: "white"}}>
+                  <h5>See what I've been up to</h5>
+                  <i class="fas fa-chevron-down fa-2x"></i>
+                </div>
+              </Link>
+            </div>
+          </div> 
+          
         </BackgroundImage>
+        
+        
     </header>
   );
 }
